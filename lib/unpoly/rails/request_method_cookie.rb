@@ -1,5 +1,5 @@
 ##
-# Installs a before_filter into all controllers which echoes the
+# Installs a before_action into all controllers which echoes the
 # request's method as a cookie named `_up_request_method`.
 #
 # The Unpoly requires this cookie to detect whether the initial page
@@ -16,7 +16,7 @@ module Unpoly
       COOKIE_NAME = '_up_method'
 
       def self.included(base)
-        base.before_filter :set_up_request_method_cookie
+        base.before_action :set_up_request_method_cookie
       end
 
       private
